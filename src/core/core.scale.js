@@ -1326,6 +1326,8 @@ var Scale = Element.extend({
 					ctx.fillText('' + label[j], 0, y);
 					y += tickFont.lineHeight;
 				}
+			} else if (label instanceof Image) {
+				ctx.drawImage(label, -label.width, y - label.height/2, label.width, label.height);
 			} else {
 				ctx.fillText(label, 0, y);
 			}
